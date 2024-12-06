@@ -53,15 +53,15 @@ Criação das tabelas de carros, ferramentas e empregados.
 Manipulação de dados
 Inserção de dados:
 
-**Adicionar uma marca à tabela de carros.
+**Adicionar uma marca à tabela de carros.**
 
-**Adicionar uma ferramenta à tabela de ferramentas.
+**Adicionar uma ferramenta à tabela de ferramentas.**
 
-**Inserir um empregado na tabela de empregados.
+**Inserir um empregado na tabela de empregados.**
 
 * Consulta de dados:_.
 
-**Listar todos os registos em todas as tabelas.
+**Listar todos os registos em todas as tabelas.**
 
 # Consultar a tabela carros
 cursor.execute('SELECT * FROM cars') # seleciona a tabela cars
@@ -73,7 +73,7 @@ for row in results: # loop for printing the rows until they run out
 
 * Seleção de dados:_
 
-**Eliminar todos os registos de todas as tabelas.
+**Eliminar todos os registos de todas as tabelas.**
 
 cursor.execute('DELETE FROM cars') # Apaga todos os dados da tabela 'cars'
 cursor.execute('DELETE FROM tools') # Apaga todos os dados da tabela 'tools'
@@ -83,7 +83,7 @@ cursor.execute('DELETE FROM employees') # Apaga todos os dados da tabela 'employ
 -----------------------------------------------------------------------------
 
 # Como executar
-**Requisitos
+**Requisitos**
 
 Python 3.x instalado.
 Biblioteca sqlite3 (incluída por padrão no Python).
@@ -93,15 +93,15 @@ Biblioteca sqlite3 (incluída por padrão no Python).
 Clonar o repositório ou copiar os ficheiros para um diretório local.
 Alterar o caminho absoluto da base de dados (path_db) para corresponder ao local onde a base de dados será armazenada.
 
-**Execução
+**Execução**
 
 Execute os scripts Python para criar a base de dados e efetuar operações:
 
-**create.py: Cria as tabelas do banco de dados.
+**create.py: Cria as tabelas do banco de dados.**
 
-**delete.py: Apaga todos os dados das tabelas.
+**delete.py: Apaga todos os dados das tabelas.**
 
-**sele.py e insert.py: Permite inserir dados e consultar registos existentes.
+**sele.py e insert.py: Permite inserir dados e consultar registos existentes.**
 
 * Detalhes do ficheiro
 
@@ -142,7 +142,7 @@ Funcionário 'João' inserido com sucesso!
 
 _os dados serão apresentados:_
 
-**Tabela CARROS
+**Tabela CARROS**
 (1, 'Toyota')
 
 **Tabela de ferramentas:**

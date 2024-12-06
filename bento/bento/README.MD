@@ -1,160 +1,161 @@
 # Oficina Database Management
-## This project uses SQLite3 to create, manage and manipulate a database called oficina.db.
-### The database is designed to store information related to cars, tools and employees of a workshop.
+## Este projeto usa SQLite3 para criar, gerir e manipular uma base de dados chamada oficina.db.
+### A base de dados foi concebida para armazenar informação relacionada com carros, ferramentas e empregados de uma oficina.
 -----------------------------------------------------------------------------
 
 
-FIRST STEPS
+PRIMEIROS PASSOS
 
 import sqlite3  
 
-#Absolute path to the database
+#Caminho absoluto para a base de dados
 path_db = r'C:\Users\ba2423\Downloads\bento\db\oficina.db'
 
-#Database connection
-connection = sqlite3.connect(path_db)
+#Ligação à base de dados
+conexão = sqlite3.connect(caminho_db)
 cursor = connection.cursor()
 
 **CODE**
 
-#Close the connection to the database
+#Fechar a ligação à base de dados
 connection.close()
 
 ---
-## Project structure
+## Estrutura do projeto
 
-Tables in the workshop database |
-The database contains the following tables: 
+Tabelas na base de dados da oficina
+A base de dados contém as seguintes tabelas: 
 
 
-Columns:
+Colunas:
 
-* id (INTEGER, primary key, auto-increment)
-BRAND (TEXT, not null)
-cars
+* id (INTEGER, chave primária, auto-incremento)
+MARCA (TEXTO, não nulo)
+carros
 
-* id (INTEGER, primary key, auto-increment)
-TOOLS (TEXT, not null)
-tools
+* id (INTEGER, chave primária, auto-incremento)
+TOOLS (TEXT, não nulo)
+ferramentas
 
-* id (INTEGER, primary key, auto-increment)
-NAMES (TEXT, not null) employees
+* id (INTEGER, chave primária, auto-incremento)
+NAMES (TEXT, não nulo) empregados
 
 
 -----------------------------------------------------------------------------
 
 
-# Functionalities
-Database creation and configuration
-Connection to the oficina.db file:
+# Funcionalidades
+Criação e configuração da base de dados
+Ligação ao ficheiro oficina.db:
 
-* The file is created automatically if it doesn't exist.
-Creation of the cars, tools and employees tables.
-Data manipulation
-Inserting data:
+* O ficheiro é criado automaticamente caso não exista.
+Criação das tabelas de carros, ferramentas e empregados.
+Manipulação de dados
+Inserção de dados:
 
-**Add a brand to the cars table.
+**Adicionar uma marca à tabela de carros.
 
-**Add a tool to the tools table.
+**Adicionar uma ferramenta à tabela de ferramentas.
 
-**Add an employee to the employees table.
+**Inserir um empregado na tabela de empregados.
 
-* Data Query:_
+* Consulta de dados:_.
 
-**List all records in all tables.
+**Listar todos os registos em todas as tabelas.
 
-# Query the cars table
-cursor.execute('SELECT * FROM cars') # select the cars table
-results = cursor.fetchall() # select all rows
+# Consultar a tabela carros
+cursor.execute('SELECT * FROM cars') # seleciona a tabela cars
+results = cursor.fetchall() # seleciona todas as linhas
 print(“CARS table:”) # print “CARS tables:”
 for row in results: # loop for printing the rows until they run out
     print(row)
 
 
-* Data Selection:_
+* Seleção de dados:_
 
-**Delete all records from all tables.
+**Eliminar todos os registos de todas as tabelas.
 
-cursor.execute('DELETE FROM cars') # Delete all data from the 'cars' table
-cursor.execute('DELETE FROM tools') # Delete all data from the 'tools' table
-cursor.execute('DELETE FROM employees') # Delete all data from the 'employees' table
+cursor.execute('DELETE FROM cars') # Apaga todos os dados da tabela 'cars'
+cursor.execute('DELETE FROM tools') # Apaga todos os dados da tabela 'tools'
+cursor.execute('DELETE FROM employees') # Apaga todos os dados da tabela 'employees'
 
 
 -----------------------------------------------------------------------------
 
-# How to execute
-**Requirements:**
+# Como executar
+**Requisitos
 
-Python 3.x installed.
-sqlite3 library (included by default in Python).
+Python 3.x instalado.
+Biblioteca sqlite3 (incluída por padrão no Python).
 
-* Steps:_
+* Passos:_
 
-Clone the repository or copy the files to a local directory.
-Change the absolute path of the database (path_db) to match the location where the database will be stored.
+Clonar o repositório ou copiar os ficheiros para um diretório local.
+Alterar o caminho absoluto da base de dados (path_db) para corresponder ao local onde a base de dados será armazenada.
 
-**Execution
+**Execução
 
-Run the Python scripts to create the database and perform operations:
+Execute os scripts Python para criar a base de dados e efetuar operações:
 
-**create.py: Creates the database tables.
+**create.py: Cria as tabelas do banco de dados.
 
-**delete.py: Deletes all the data from the tables.
+**delete.py: Apaga todos os dados das tabelas.
 
-**sele.py and insert.py: Allows you to insert data and query existing records.
+**sele.py e insert.py: Permite inserir dados e consultar registos existentes.
 
-* File Details
+* Detalhes do ficheiro
 
 **create.py:**
-Creates the database and the tables cars, tools and employees.
+Cria a base de dados e as tabelas carros, ferramentas e empregados.
 
 **delete.py:**
-Removes all records from the tables.
+Remove todos os registos das tabelas.
 
-**sele.py and insert.py:**
-Allows you to:
+**sele.py e insert.py:**
+Permite-lhe:
 
-Insert new makes, tools and employees.
-Consult the data in each table.
-
-
-* Example of Use
-
-**Insert Data**
-
-* When you run insert.py, you'll be asked to enter information: _
+Inserir novas marcas, ferramentas e funcionários.
+Consultar os dados de cada tabela.
 
 
-**Enter the brand name: Toyota**
-Brand 'Toyota' inserted successfully!
+* Exemplo de Utilização
 
-**Enter tool name: Wrench**
-Tool 'Wrench' inserted successfully!
+**Inserir Dados**
 
-**Enter employee name: João**
-Employee 'John' entered successfully!
+* Ao executar o insert.py, ser-lhe-á pedido para introduzir informação: _
 
-**consult data**
 
-* When running sele.py, the following information will be displayed: _
+**Introduza o nome da marca: Toyota**
+Marca 'Toyota' inserida com sucesso!
 
-**Consult Data**
+**Introduzir o nome da ferramenta: Wrench**
+Ferramenta 'Wrench' inserida com sucesso!
 
-_the data will be displayed:_
+**Entrar o nome do empregado: João**
+Funcionário 'João' inserido com sucesso!
 
-**CARS table
+**consultar dados**
+
+* Ao executar o sele.py, as seguintes informações serão exibidas: _
+
+**Dados da consulta**
+
+_os dados serão apresentados:_
+
+**Tabela CARROS
 (1, 'Toyota')
 
-**TOOLS table:**
+**Tabela de ferramentas:**
 (1, 'Wrench')
 
-**TABLE EMPLOYEES:**
-(1, 'John')
+**TABELA EMPREGADOS:**
+(1, 'João')
 
 -----------------------------------------------------------------------------
-* Notes
+* Notas
 
-Make sure that the path to the oficina.db file is valid before running the scripts.
-To change the scripts or add new functionalities, edit the Python files as necessary. 
+Certifique-se de que o caminho para o ficheiro oficina.db é válido antes de executar os scripts.
+Para alterar os scripts ou adicionar novas funcionalidades, edite os ficheiros Python conforme necessário. 
 
-Translated with DeepL.com (free version)
+
+Traduzido com a versão gratuita do tradutor - DeepL.com
